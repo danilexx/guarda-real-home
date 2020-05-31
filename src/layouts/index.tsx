@@ -5,7 +5,7 @@ import Nav from "src/components/Nav";
 import Footer from "src/components/Footer";
 // import { useLocation, useMedia } from "react-use";
 // import Footer from "src/components/Footer";
-// import { useLocation } from "react-use";
+import { useLocation } from "react-use";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -79,16 +79,25 @@ const GlobalStyle = createGlobalStyle`
 
 `;
 
+const getBlogFromLocation = (path: string | undefined) => {
+  if (typeof path !== "string") {
+    return false;
+  }
+  const paths = path.split("/");
+  if (paths[1] === "blog") return true;
+  return false;
+};
+
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // const location = useLocation();
+  const location = useLocation();
   // const small = useMedia("(min-width: 780px");
-  // const isGuides = getDocsFromLocation(location.pathname);
+  const isBlog = getBlogFromLocation(location.pathname);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Nav />
+      {!isBlog && <Nav />}
       {children}
-      <Footer />
+      {!isBlog && <Footer />}
     </ThemeProvider>
   );
 };

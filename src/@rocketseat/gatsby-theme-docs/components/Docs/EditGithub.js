@@ -3,30 +3,6 @@ import PropTypes from "prop-types";
 import { MdEdit } from "react-icons/md";
 
 export default function EditGithub({ githubEditUrl }) {
-  if (githubEditUrl) {
-    const [https, ...rest] = githubEditUrl.split("/");
-    const newLink = `${https}//${rest.join("/")}`
-    return (
-      <a
-        href={newLink}
-        target="_blank"
-        // rel="noopener noreferrer"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          textDecoration: "none",
-          marginTop: "48px",
-          color: "#78757a",
-          opacity: "0.8",
-          fontSize: "14px",
-          fontWeight: "normal"
-        }}
-      >
-        <MdEdit style={{ marginRight: "5px" }} />
-        Edit this page on GitHub (Only Mineiro & Danilex)
-      </a>
-    );
-  }
   return null;
 }
 

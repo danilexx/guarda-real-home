@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Headroom from 'react-headroom';
+import React from "react";
+import PropTypes from "prop-types";
+import Headroom from "react-headroom";
 import styled from "styled-components";
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { useStaticQuery, graphql } from 'gatsby';
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useStaticQuery, graphql } from "gatsby";
 import Nav from "../../../components/Nav";
 
 const Container = styled.div`
@@ -18,7 +18,7 @@ const Container = styled.div`
   transition: transform 0.5s;
 
   transform: translate3d(
-    ${({ isMenuOpen }) => (isMenuOpen ? '240px' : '0')},
+    ${({ isMenuOpen }) => (isMenuOpen ? "240px" : "0")},
     0,
     0
   );
@@ -53,15 +53,15 @@ export default function Header({ handleMenuOpen, isMenuOpen }) {
           }
         }
       }
-    `,
+    `
   );
 
   const { siteTitleShort } = site.siteMetadata;
 
   return (
-    <Headroom>
-      {/* <Nav/> */}
-      <Container className="nav" isMenuOpen={isMenuOpen}>
+    <>
+      <Nav menuAction={handleMenuOpen} />
+      {/* <Container className="nav" isMenuOpen={isMenuOpen}>
         <button
           aria-label="Open sidebar"
           type="button"
@@ -70,12 +70,12 @@ export default function Header({ handleMenuOpen, isMenuOpen }) {
           <GiHamburgerMenu fill="white" size={23} />
         </button>
         <h2>Seções</h2>
-      </Container>
-    </Headroom>
+      </Container> */}
+    </>
   );
 }
 
 Header.propTypes = {
   handleMenuOpen: PropTypes.func.isRequired,
-  isMenuOpen: PropTypes.bool.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired
 };

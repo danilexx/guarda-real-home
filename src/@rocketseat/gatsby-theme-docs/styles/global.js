@@ -38,16 +38,18 @@ export default function GlobalStyle() {
 
         h1 {
           font-size: 32px;
-          color: white;
+          color: rgba(0, 0, 0, 0.9);
           font-weight: normal;
           margin-bottom: 24px;
         }
 
         h2 {
+          color: rgba(0, 0, 0, 0.9);
           font-size: 24px;
         }
 
         h3 {
+          color: rgba(0, 0, 0, 0.9);
           font-size: 18px;
         }
 
@@ -60,7 +62,7 @@ export default function GlobalStyle() {
         h4,
         h5,
         h6 {
-          color: white;
+          color: rgba(0, 0, 0, 0.9);
           margin: 24px 0 16px 0;
           font-weight: normal;
         }
@@ -71,7 +73,7 @@ export default function GlobalStyle() {
         }
 
         p {
-          color: rgba(255,255,255,0.8);
+          color: rgba(0, 0, 0, 0.9);
           font-size: 16px;
           line-height: 28px;
           margin-bottom: 16px;
@@ -163,7 +165,7 @@ export default function GlobalStyle() {
 
         ul,
         ol {
-          color: white;
+          color: rgba(0, 0, 0, 0.9);
           padding-left: 15px;
           margin-bottom: 16px;
 

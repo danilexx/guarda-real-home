@@ -52,7 +52,7 @@ export default function Sidebar({ isMenuOpen }) {
   return (
     <Container isMenuOpen={isMenuOpen}>
       <nav>
-        <List style={{ paddingTop: "1rem" }}>
+        <List style={{ paddingTop: "10vh" }}>
           {/* <Item style={{ marginTop: "1rem", letterSpacing: "0.02rem" }}>
             <InternalLink link={basePath} label="Começando" />
           </Item> */}

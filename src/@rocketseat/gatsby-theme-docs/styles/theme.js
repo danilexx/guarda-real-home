@@ -1,14 +1,14 @@
 export default {
   colors: {
     primary: "#012F59",
-    background: "#2F2F2F",
+    background: "white",
     sidebar: {
-      background: "#2F2F2F",
-      link: "white",
-      heading: "white",
+      background: "white",
+      link: "rgba(0, 0, 0, 0.9)",
+      heading: "rgba(0, 0, 0, 0.9)",
       linkActive: "#012F59",
-      itemActive: "#424242",
-      footer: "white"
+      itemActive: "rgba(0,0,0,0.2)",
+      footer: "rgba(0, 0, 0, 0.9)"
     }
   }
 };

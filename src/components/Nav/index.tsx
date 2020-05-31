@@ -18,7 +18,7 @@ import {
 import { useMedia, useToggle, useLockBodyScroll } from "react-use";
 
 const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
-  // const isSmall = useMedia("(max-width: 800px)");
+  const isSmall = useMedia("(max-width: 780px)");
   const [isMenuOpened, toggleMenu] = useToggle(false);
   useLockBodyScroll(isMenuOpened);
   // const handleStateChange = React.useCallback(state => {
@@ -36,7 +36,11 @@ const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
             isMenuOpened={isMenuOpened}
             onClick={() => {
               console.log("ola");
-              toggleMenu();
+              if (menuAction && isSmall) {
+                menuAction();
+              } else {
+                toggleMenu();
+              }
             }}
           />
         </Container>
