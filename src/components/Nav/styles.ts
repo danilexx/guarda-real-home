@@ -229,7 +229,7 @@ export const Horacio = styled.img.attrs({
 export const MenuContainer = styled.div<{ isOpen: boolean }>`
   display: flex;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 10vh;
   left: 0;
   width: 100%;
