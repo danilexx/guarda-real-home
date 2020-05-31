@@ -4,12 +4,9 @@ import { navigate } from "gatsby";
 // import ApresentationSection from "src/Sections/Apresentation";
 
 const Home: React.FC = () => {
-  useTitle("Cutulu | Home");
-  if (typeof window !== "undefined") {
-    navigate("/guides");
-  }
+  useTitle("Guarda Real | Home");
 
-  return null;
+  return <>Hello</>;
 };
 
 export default Home;

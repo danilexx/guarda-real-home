@@ -22,9 +22,11 @@ export const Wrapper = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  background-color: ${props => props.theme.secondary};
-  z-index: 25;
-  height: 10vh;
+  background-image: url(/icons/texture.svg);
+  background-color: #E6DFB3;
+  background-size: 10%;
+	height: 10vh;
+	z-index: 50;
 `;
 
 export const Links = styled.ul`
@@ -216,4 +218,34 @@ export const StartButton = styled.button`
       transform: translateX(0%);
     }
   }
+`;
+
+
+export const MenuContainer = styled.div<{isOpen: boolean}>`
+	display: flex;
+	flex-direction: column;
+	position: sticky;
+	top: 10vh;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: white;
+	z-index: 45;
+	transform: ${props => props.isOpen ? "translateY(0)" : "translateY(-100%)"}
+`;
+
+export const PrimaryLink = styled.a`
+	width: 100%;
+	background-color: ${props => props.theme.primary};
+	color: white;
+	padding: 0.5rem 1rem;
+`;
+
+export const RegularLink = styled.a`
+	width: 90%;
+	margin: 0 auto;
+	color: ${props => props.theme.primary};
+	padding: 0.5rem 1rem;
+	border-bottom: 1rem solid ${props => props.theme.primary};
+	
 `;

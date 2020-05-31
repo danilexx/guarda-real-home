@@ -93,7 +93,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      {isGuides && small && <Nav />}
+      <Nav />
       {children}
       {/* {!isDocs && <Footer />} */}
     </ThemeProvider>

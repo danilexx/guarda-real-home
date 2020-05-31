@@ -8,9 +8,11 @@ import {
   Wrapper,
   MenuWrap,
   BurguerMenu,
-  MenuLink
+  MenuLink,
+  MenuContainer,
+  PrimaryLink
 } from "./styles";
-import { slide as Menu } from "react-burger-menu";
+// import { slide as Menu } from "react-burger-menu";
 import { useMedia, useToggle, useLockBodyScroll } from "react-use";
 
 const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
@@ -32,16 +34,11 @@ const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
           <MenuLink href="/">
             <FilledLogo />
           </MenuLink>
-          <MenuWrap>
-            <Menu
-              width={isSmall && isMenuOpened ? "80%" : "300px"}
-              onStateChange={handleStateChange}
+            <MenuContainer
               isOpen={isMenuOpened}
-              right
             >
-              <Link href="/guides">Guias</Link>
-            </Menu>
-          </MenuWrap>
+              <PrimaryLink href="/guides">Guias</PrimaryLink>
+            </MenuContainer>
           {isSmall ? (
             <BurguerMenu
               isMenuOpened={isMenuOpened}
