@@ -5,6 +5,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   margin: 0 auto;
   width: 1000px;
   padding: 1rem 2rem;
@@ -22,11 +23,12 @@ export const Wrapper = styled.div`
   top: 0;
   left: 0;
   width: 100%;
-  background-image: url(/icons/texture.svg);
-  background-color: #E6DFB3;
-  background-size: 10%;
-	height: 10vh;
-	z-index: 50;
+  background-image: url("/icons/texture.svg");
+  background-color: #e6dfb3;
+  background-size: 33px;
+  height: 10vh;
+  z-index: 50;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.25);
 `;
 
 export const Links = styled.ul`
@@ -167,18 +169,14 @@ export const BurguerMenu = styled.img.attrs<{
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: red; */
-  /* margin-left: auto;
-  margin-right: 2rem; */
-  position: ${props => (props.pinned ? "fixed" : "absolute")};
-  top: 5vh;
-  right: 2rem;
-  transform: translateY(-50%);
-  z-index: ${props => (props.pinned ? "70" : "45")};
+  // position: absolute;
+  // top: 50%;
+  // right: 2rem;
+  // transform: translateY(-50%);
   cursor: pointer;
   transition: transform 0.05s ease-in-out;
   &:active {
-    transform: translateY(-50%) scale(0.9);
+    transform: scale(0.9);
   }
 `;
 
@@ -219,33 +217,46 @@ export const StartButton = styled.button`
     }
   }
 `;
+export const Horacio = styled.img.attrs({
+  src: "/icons/menu/horacio.svg"
+})<{ isOpen: boolean }>`
+  transition: transform 0.5s ease-in-out 0.2s;
+  /* opacity: ${props => (props.isOpen ? 1 : 0)}; */
+  transform: ${props => (props.isOpen ? "translateX(0)" : "translateX(100%)")};
+  will-change: transform;
+`;
 
-
-export const MenuContainer = styled.div<{isOpen: boolean}>`
-	display: flex;
-	flex-direction: column;
-	position: sticky;
-	top: 10vh;
-	left: 0;
-	width: 100%;
-	height: 100vh;
-	background-color: white;
-	z-index: 45;
-	transform: ${props => props.isOpen ? "translateY(0)" : "translateY(-100%)"}
+export const MenuContainer = styled.div<{ isOpen: boolean }>`
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 45;
+  transition: transform 0.6s ease-in-out;
+  transform: ${props => (props.isOpen ? "translateY(0)" : "translateY(-100%)")};
+  will-change: transform;
+  overflow: hidden;
 `;
 
 export const PrimaryLink = styled.a`
-	width: 100%;
-	background-color: ${props => props.theme.primary};
-	color: white;
-	padding: 0.5rem 1rem;
+  width: 100%;
+  background-color: ${props => props.theme.primary};
+  color: white;
+  padding: 1.5rem 1rem;
+  text-decoration: none;
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
-export const RegularLink = styled.a`
-	width: 90%;
-	margin: 0 auto;
-	color: ${props => props.theme.primary};
-	padding: 0.5rem 1rem;
-	border-bottom: 1rem solid ${props => props.theme.primary};
-	
+export const RegularLink = styled(PrimaryLink)`
+  width: 90%;
+  margin: 0 auto;
+  background-color: transparent;
+  color: ${props => props.theme.primary};
+  border-bottom: 2px solid ${props => props.theme.primary};
 `;

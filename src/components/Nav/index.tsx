@@ -10,23 +10,21 @@ import {
   BurguerMenu,
   MenuLink,
   MenuContainer,
-  PrimaryLink
+  PrimaryLink,
+  RegularLink,
+  Horacio
 } from "./styles";
 // import { slide as Menu } from "react-burger-menu";
 import { useMedia, useToggle, useLockBodyScroll } from "react-use";
 
 const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
-  const isSmall = useMedia("(max-width: 800px)");
+  // const isSmall = useMedia("(max-width: 800px)");
   const [isMenuOpened, toggleMenu] = useToggle(false);
   useLockBodyScroll(isMenuOpened);
-  const handleStateChange = React.useCallback(state => {
-    toggleMenu(state.isOpen);
-  }, []);
-  React.useEffect(() => {
-    if (isMenuOpened && !isSmall) {
-      toggleMenu(false);
-    }
-  }, [isMenuOpened, isSmall]);
+  // const handleStateChange = React.useCallback(state => {
+  //   toggleMenu(state.isOpen);
+  // }, []);
+
   return (
     <>
       <Wrapper className="nav">
@@ -34,24 +32,22 @@ const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
           <MenuLink href="/">
             <FilledLogo />
           </MenuLink>
-            <MenuContainer
-              isOpen={isMenuOpened}
-            >
-              <PrimaryLink href="/guides">Guias</PrimaryLink>
-            </MenuContainer>
-          {isSmall ? (
-            <BurguerMenu
-              isMenuOpened={isMenuOpened}
-              pinned={isMenuOpened}
-              onClick={() => (menuAction ? menuAction() : toggleMenu())}
-            />
-          ) : (
-            <Links>
-              <Link href="/guides">Guias</Link>
-            </Links>
-          )}
+          <BurguerMenu
+            isMenuOpened={isMenuOpened}
+            onClick={() => {
+              console.log("ola");
+              toggleMenu();
+            }}
+          />
         </Container>
       </Wrapper>
+      <MenuContainer isOpen={isMenuOpened}>
+        <PrimaryLink href="/register">Fazer Cadastro</PrimaryLink>
+        <RegularLink href="/login">Entrar</RegularLink>
+        <RegularLink href="/blog">Blog</RegularLink>
+        <RegularLink href="/support">Fale Conosco</RegularLink>
+        <Horacio isOpen={isMenuOpened} />
+      </MenuContainer>
     </>
   );
 };

@@ -1,66 +1,65 @@
 import React from "react";
 import {
   Container,
-  Row,
-  DarkLogo,
-  Content,
+  Section,
   Title,
-  Link,
-  Anchor,
-  Copyright
+  Description,
+  SocialMedias,
+  SocialMediaIcon,
+  SocialMediaName,
+  SocialMedia
 } from "./styles";
+import Mailchimp from "react-mailchimp-form";
+import Column from "../Column";
 
 const Footer = () => (
   <Container>
-    <Row>
-      <DarkLogo />
-      <Content>
-        <Title>Seções</Title>
-        <Link href="/pricing">Pricing</Link>
-        <Link href="/about">About</Link>
-        <Link href="/docs">Docs</Link>
-        <Link href="/team">Team</Link>
-        <Link href="/support">Support</Link>
-        <Link href="/register">Start Now</Link>
-      </Content>
-      <Content>
-        <Title>Documentation</Title>
-        <Anchor target="_blank" href="#">
-          Get Started
-        </Anchor>
-        <Anchor target="_blank" href="#">
-          Products
-        </Anchor>
-        <Anchor target="_blank" href="#">
-          Payments
-        </Anchor>
-      </Content>
-      <Content>
-        <Title>Support</Title>
-        <Anchor target="_blank" href="#">
-          FAQ
-        </Anchor>
-        <Anchor target="_blank" href="#">
-          My Account
-        </Anchor>
-        <Anchor target="_blank" href="#">
-          About
-        </Anchor>
-      </Content>
-      <Content>
-        <Title>Social Media</Title>
-        <Anchor target="_blank" href="#">
-          Facebook
-        </Anchor>
-        <Anchor target="_blank" href="#">
-          Twitter
-        </Anchor>
-        <Anchor target="_blank" href="#">
-          Instagram
-        </Anchor>
-      </Content>
-    </Row>
-    <Copyright>Copyright - 2020</Copyright>
+    <Column>
+      <Section>
+        <Title>Assinar o boletim Real:</Title>
+        <Description>
+          Assine nossa newsletter e receba semanalmente os melhores conteúdos
+          sobre educação finaceira!
+        </Description>
+        <Mailchimp
+          action="https://gmail.us4.list-manage.com/subscribe/post?u=ee9c5bed6b557deb28882c39b&amp;id=aa377ea68d"
+          fields={[
+            {
+              name: "EMAIL",
+              placeholder: "Email",
+              type: "email",
+              required: true
+            }
+          ]}
+          className="mailchip"
+          messages={{
+            sending: "Enviando...",
+            success: "Obrigado por sua inscrição !",
+            error: "Um erro ocorreu.",
+            empty: "Você devê escrever um email.",
+            duplicate: "Email Duplicado",
+            button: "Assinar"
+          }}
+        />
+      </Section>
+      <Section>
+        <Title>Assinar o boletim Real:</Title>
+        <Description>
+          Assine nossa newsletter e receba semanalmente os melhores conteúdos
+          sobre educação finaceira!
+        </Description>
+        <SocialMedias>
+          <SocialMedia>
+            <SocialMediaIcon src="/icons/socialmedia/instagram.svg" />
+            <SocialMediaName>Instagram</SocialMediaName>
+          </SocialMedia>
+          <SocialMedia>
+            <SocialMediaIcon src="/icons/socialmedia/facebook.svg" />
+            <SocialMediaName>facebook</SocialMediaName>
+          </SocialMedia>
+        </SocialMedias>
+      </Section>
+    </Column>
   </Container>
 );
 

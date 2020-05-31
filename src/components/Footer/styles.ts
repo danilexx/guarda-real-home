@@ -1,90 +1,83 @@
 import styled, { css } from "src/lib/StyledComponents";
 
 export const Container = styled.footer`
+  ${props => props.theme.texture};
   width: 100%;
-  background-color: #282828;
   padding: 1rem 2rem;
   position: relative;
   overflow: hidden;
-`;
 
-export const Row = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-  width: 1000px;
-  padding: 2rem;
-  flex-wrap: wrap;
-  @media (max-width: 1020px) {
+  .mailchip {
+    display: flex;
     width: 100%;
-  }
-  /* @media screen and (max-width: 700px) {
-    flex-direction: column;
-  } */
-`;
-
-export const DarkLogo = styled.img.attrs({
-  src: "/icons/logos/dark.svg"
-})`
-  width: 15rem;
-  height: fit-content;
-  @media screen and (max-width: 600px) {
-    width: 80%;
-    margin: 0 auto;
-  }
-`;
-
-export const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 4rem;
-  margin-right: 1rem;
-  position: relative;
-  @media screen and (max-width: 600px) {
-    width: 100%;
-    text-align: center;
+    max-width: 300px;
     margin: 1rem 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+    .msg-alert {
+      width: 100%;
+    }
+    /* width: fit-content; */
+    height: 5rem;
+    input {
+      flex: 1;
+      height: 100%;
+      border-radius: 5px;
+      padding: 1.2rem;
+      border: 1px solid ${props => props.theme.primary};
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    button {
+      height: 100%;
+      background-color: ${props => props.theme.primary};
+      color: white;
+      padding: 0.5rem;
+      border: none;
+      border-radius: 5px;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
   }
 `;
 
-export const baseLinkStyles = css`
-  color: #626262;
-  font-size: 1.5rem;
-  margin: 0.1rem 0;
-  cursor: pointer;
-  text-decoration: none;
-  &:hover {
-    color: ${props => props.theme.primary};
-  }
-  @media screen and (max-width: 600px) {
-    font-size: 2.5rem;
-  }
-`;
-
-export const Link = styled.a`
-  ${baseLinkStyles}
-  cursor: pointer;
-`;
-export const Anchor = styled.a`
-  ${baseLinkStyles}
-  text-decoration: none;
-`;
+export const Section = styled.div``;
 
 export const Title = styled.h1`
-  color: #e7e7e7;
+  color: ${props => props.theme.primary};
   font-size: 2rem;
-  font-weight: normal;
-  margin: 0.5rem 0;
-  @media screen and (max-width: 600px) {
-    font-size: 3rem;
-  }
+  text-align: left;
+  font-weight: bold;
+  margin: 1rem 0;
 `;
 
-export const Copyright = styled.p`
-  font-size: 2rem;
-  color: #444444;
-  width: 100%;
-  text-align: center;
-  font-weight: bold;
+export const Description = styled.p`
+  color: #575757;
+  font-size: 1.5rem;
+  line-height: 100%;
   margin: 0.5rem 0;
+`;
+
+export const SocialMedias = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: 1rem;
+`;
+
+export const SocialMedia = styled.a`
+  display: flex;
+  flex-direction: row;
+  margin: 0 0.5rem;
+`;
+
+export const SocialMediaName = styled.p`
+  color: ${props => props.theme.primary};
+  font-size: 2rem;
+  margin: 0 1rem;
+`;
+
+export const SocialMediaIcon = styled.img`
+  width: 3rem;
+  height: 3rem;
 `;
