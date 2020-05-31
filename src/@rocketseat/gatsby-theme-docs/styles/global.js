@@ -95,7 +95,7 @@ export default function GlobalStyle() {
         }
 
         a {
-          color: white;
+          color: rgba(0,0,0,0.8);
           font-weight: bold;
           letter-spacing: 0.1rem;
           &:hover {
