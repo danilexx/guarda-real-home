@@ -6,6 +6,13 @@ export const Container = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
+  padding-top: 6rem;
+  overflow: hidden;
+`;
+
+export const Wrapper = styled.div`
+  position: relative;
+  margin: 1rem 5rem;
 `;
 
 export const MessageContainer = styled.div`
@@ -13,6 +20,9 @@ export const MessageContainer = styled.div`
   /* background-repeat: no-repeat; */
   /* background-position: center; */
   /* background-size: cover; */
+  margin: 1rem 5rem;
+  width: 30rem;
+  z-index: 15;
   background-color: white;
   border-radius: 5px;
   border: 1px solid #c9c9c9;
@@ -20,7 +30,7 @@ export const MessageContainer = styled.div`
   /* width: 27.472rem; */
   height: fit-content;
   padding: 2rem;
-  margin: 1rem 0;
+  /* margin: 1rem 0; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,6 +51,11 @@ export const MessageContainer = styled.div`
 export const HoracioTalking = styled.img.attrs({
   src: "/icons/horacio-talk.svg"
 })`
+  position: absolute;
+  right: 0;
+  transform: translateX(40%);
+  z-index: 10;
+  top: -70px;
   /* position: absolute; */
   /* top: 0; */
   /* right: 0; */

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, MessageContainer, HoracioTalking } from "./styles";
+import { Container, MessageContainer, HoracioTalking, Wrapper } from "./styles";
 
 interface Props {
   message: string;
@@ -8,8 +8,10 @@ interface Props {
 const HoracioMessage: React.FC<Props> = ({ message }) => {
   return (
     <Container>
-      <MessageContainer>{message}</MessageContainer>
-      <HoracioTalking />
+      <Wrapper>
+        <MessageContainer>{message}</MessageContainer>
+        <HoracioTalking />
+      </Wrapper>
     </Container>
   );
 };

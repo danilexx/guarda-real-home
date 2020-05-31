@@ -12,17 +12,19 @@ const Login = () => {
   };
   const formRef = React.useRef<FormHandles>(null);
   return (
-    <Column>
+    <>
       <HoracioMessage message="Coloque suas informações aqui para entrar no castelo, Majestade!" />
-      <Form ref={formRef} onSubmit={handleSubmit}>
-        <Input name="email" placeholder="Email" />
-        <Input name="password" placeholder="Senha" />
-        <Buttons>
-          <ButtonP>Entrar</ButtonP>
-          <ButtonS>Cadastrar</ButtonS>
-        </Buttons>
-      </Form>
-    </Column>
+      <Column>
+        <Form ref={formRef} onSubmit={handleSubmit}>
+          <Input name="email" placeholder="Email" />
+          <Input name="password" placeholder="Senha" />
+          <Buttons>
+            <ButtonP>Entrar</ButtonP>
+            <ButtonS>Cadastrar</ButtonS>
+          </Buttons>
+        </Form>
+      </Column>
+    </>
   );
 };
 
