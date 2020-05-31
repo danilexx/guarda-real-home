@@ -21,7 +21,7 @@ export const MessageContainer = styled.div`
   /* background-position: center; */
   /* background-size: cover; */
   margin: 1rem 5rem;
-  width: 30rem;
+  max-width: 30rem;
   z-index: 15;
   background-color: white;
   border-radius: 5px;
