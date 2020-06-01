@@ -25,6 +25,10 @@ const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
   //   toggleMenu(state.isOpen);
   // }, []);
 
+  const closeMenu = () => {
+    toggleMenu();
+  };
+
   return (
     <>
       <Wrapper className="nav">
@@ -46,10 +50,18 @@ const Nav: React.FC<{ menuAction?: any }> = ({ menuAction }) => {
         </Container>
       </Wrapper>
       <MenuContainer isOpen={isMenuOpened}>
-        <PrimaryLink href="/register">Fazer Cadastro</PrimaryLink>
-        <RegularLink href="/login">Entrar</RegularLink>
-        <RegularLink href="/blog">Blog</RegularLink>
-        <RegularLink href="/support">Fale Conosco</RegularLink>
+        <PrimaryLink onClick={() => closeMenu()} href="/register">
+          Fazer Cadastro
+        </PrimaryLink>
+        <RegularLink onClick={() => closeMenu()} href="/login">
+          Entrar
+        </RegularLink>
+        <RegularLink onClick={() => closeMenu()} href="/blog">
+          Blog
+        </RegularLink>
+        <RegularLink onClick={() => closeMenu()} href="/support">
+          Fale Conosco
+        </RegularLink>
         <Horacio isOpen={isMenuOpened} />
       </MenuContainer>
     </>
