@@ -13,7 +13,12 @@ import Selector from "src/components/Selector";
 import InputMask from "src/components/InputMask";
 
 setIntl();
-const titleOptions = [{ label: "Principe", value: "principe" }];
+const titleOptions = [
+  { label: "Principe", value: "principe" },
+  { label: "Princesa", value: "princesa" },
+  { label: "Duque", value: "duque" },
+  { label: "Duquesa", value: "principe" }
+];
 const afiliationOptions = [
   { label: "Filho ou Filha", value: "son" },
   { label: "Neto ou Neta", value: "grandson" },
