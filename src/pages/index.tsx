@@ -65,7 +65,9 @@ const Home: React.FC = () => {
           <Content>
             Comece a previdênvia do seu tesouro agora mesmo, sem sair de casa!
           </Content>
-          <Button>Cadastre-se</Button>
+          <Button as="a" href="/register">
+            Cadastre-se
+          </Button>
         </Section>
       </Column>
     </>

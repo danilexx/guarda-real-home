@@ -83,4 +83,7 @@ export const Button = styled.button`
   max-width: 350px;
   padding: 1rem 4rem;
   border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
 `;
