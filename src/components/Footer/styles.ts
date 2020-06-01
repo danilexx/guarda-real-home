@@ -27,6 +27,7 @@ export const Container = styled.footer`
       padding: 1.2rem;
       border: 1px solid ${props => props.theme.primary};
       border-top-right-radius: 0;
+      min-width: 0;
       border-bottom-right-radius: 0;
     }
     button {

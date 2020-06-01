@@ -19,6 +19,8 @@ const BaseButton = styled.button`
   font-size: 2rem;
   font-weight: bold;
   cursor: pointer;
+  text-align: center;
+  text-decoration: none;
 `;
 
 export const ButtonP = styled(BaseButton)`
@@ -27,7 +29,18 @@ export const ButtonP = styled(BaseButton)`
   transition: 0.1s ease-in-out;
   transition-property: background-color;
   &:hover {
+    cursor: white !important;
     background-color: ${props => darken(0.1, props.theme.primary)};
+  }
+`;
+export const ButtonT = styled(BaseButton)`
+  background-color: ${props => props.theme.secondary};
+  color: white !important;
+  transition: 0.1s ease-in-out;
+  transition-property: background-color;
+  /* margin: 1rem auto; */
+  &:hover {
+    background-color: ${props => darken(0.1, props.theme.secondary)};
   }
 `;
 

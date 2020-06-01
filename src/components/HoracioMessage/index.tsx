@@ -3,13 +3,14 @@ import { Container, MessageContainer, HoracioTalking, Wrapper } from "./styles";
 
 interface Props {
   message: string;
+  width?: string;
 }
 
-const HoracioMessage: React.FC<Props> = ({ message }) => {
+const HoracioMessage: React.FC<Props> = ({ message, width }) => {
   return (
     <Container>
       <Wrapper>
-        <MessageContainer>{message}</MessageContainer>
+        <MessageContainer width={width}>{message}</MessageContainer>
         <HoracioTalking />
       </Wrapper>
     </Container>

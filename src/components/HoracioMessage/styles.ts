@@ -6,7 +6,7 @@ export const Container = styled.div`
   position: relative;
   justify-content: center;
   align-items: center;
-  padding-top: 6rem;
+  padding: 6rem 0;
   overflow: hidden;
 `;
 
@@ -15,13 +15,13 @@ export const Wrapper = styled.div`
   margin: 1rem 5rem;
 `;
 
-export const MessageContainer = styled.div`
+export const MessageContainer = styled.div<{ width?: string }>`
   /* background-image: url("icons/talk-bg.svg"); */
   /* background-repeat: no-repeat; */
   /* background-position: center; */
   /* background-size: cover; */
   margin: 1rem 5rem;
-  max-width: 30rem;
+  max-width: ${props => (props.width ? props.width : "30rem")};
   z-index: 15;
   background-color: white;
   border-radius: 5px;

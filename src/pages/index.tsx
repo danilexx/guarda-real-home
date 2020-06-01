@@ -60,7 +60,7 @@ const Home: React.FC = () => {
           <CenterLink href="#">Saiba Mais</CenterLink>
         </Section>
         <Section>
-          <Icon src="/icons/chest.svg" />
+          <Icon src="/icons/scroll.svg" />
           <Title>Nada de pergaminhos, é tudo digital!</Title>
           <Content>
             Comece a previdênvia do seu tesouro agora mesmo, sem sair de casa!
