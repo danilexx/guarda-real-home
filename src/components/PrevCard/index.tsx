@@ -114,7 +114,7 @@ const PrevCard = () => {
       </InfoRow>
       <CHKRow>
         <input id="chk1" type="checkbox" />
-        <label for="chk1">
+        <label htmlFor="chk1">
           Permitir que o Príncipe Vinícius acesse as informações da previdência
           no aplicativo
         </label>
