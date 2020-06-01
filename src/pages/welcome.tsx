@@ -7,7 +7,7 @@ import Column from "src/components/Column";
 
 const Welcome = () => {
   return (
-    <Column style={{ margin: "5rem 0" }}>
+    <Column style={{ margin: "5rem auto" }}>
       <BigLogo />
       <BigText>
         Seja bem-vinda <br />

@@ -22,7 +22,7 @@ const Dashboard = () => {
         />
         <MonetaryCard
           as="a"
-          href="prev"
+          href="/dashboard/1/prev"
           icon="/icons/big_chest.svg"
           name="Saldo Previdência"
           value="R$ 9.000,00"
